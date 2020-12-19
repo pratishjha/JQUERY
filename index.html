@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> jQuery Tutitorial</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+</head>
+
+<body>
+
+    <h1>jQuery Basics</h1>
+    <p> By Pratish Jha</p>
+    <ul>
+        <li>Jha <a href="www.google.com">Google</a></li>
+        <li>Bhai</li>
+        <li> Hai naa</li>
+    </ul>
+</body>
+
+<p> Thanks for watching</p>
+
+<div class="cartoon">
+    <img id="one" src="img/1.jpg">
+    <img id="two" src="img/24.jpeg">
+    <img id="three" src="img/3.png">
+</div>
+
+<!-- <script>
+    let design = {
+        color: "blue",
+        background: "yellow",
+        border: "3px solid black"
+    }
+
+    $(document).ready(function () {
+        $("button").click(function () {
+            alert("Value: " + $("#login").val());
+        });
+    });
+</script> 
+-->
+<p> Start Typing ...........</p>
+<input type="text" id="login" size="10">
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("img").toggleClass("styleclass");
+            $("body").toggleClass("bgroung");
+        });
+        $("img").click(function(){
+                 $(this).hide();
+        }); 
+        $("input").on("keypress", function() {
+            $("p:last").hide();
+        });
+        $("#b1").click(function(){
+            $("img").hide();
+        });
+        $("#b2").click(function(){
+            $("img").show();
+        });
+        $("#b3").click(function(){
+            $("img").toggle();
+        });
+        $("#b4").click(function(){
+            $("#one").fadeOut("slow");
+            $("#two").fadeOut("fast");
+            $("#three").fadeOut("slow");
+        });
+        $("#b5").click(function(){
+            $("#one").fadeIn("slow");
+            $("#two").fadeIn("fast");
+            $("#three").fadeIn("slow");
+        });
+
+        $("#drag").draggable();
+
+        $("#img1").draggable();
+        $("#drop").droppable();
+
+        $("#date").datepicker();
+    });
+</script>
+<button> Try to add class</button>
+
+<br> <br>
+<button id="b1">Hide</button>
+<button id="b2">Show</button>
+<button id="b3">Toggle</button>
+<button id="b4">Fade Out</button>
+<button id="b5">Fade In</button>
+<div id="drag">Drag Me Anywhere</div>
+<br> <br>
+<img id="img1" src="img/14.jpg">
+<div id="drop">Drop Here</div>
+<br> <br>
+<input id="date" type="date" >
+</html>
